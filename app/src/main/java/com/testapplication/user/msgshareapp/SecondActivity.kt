@@ -1,5 +1,6 @@
 package com.testapplication.user.msgshareapp
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -30,6 +31,17 @@ class SecondActivity : AppCompatActivity(){
 
             startActivity(Intent.createChooser(intent,"Share this message to :"))
         }
+
+        Backbtn.setOnClickListener {
+
+            var returnResult = this.intent
+            returnResult.putExtra("return" , "Hello from Second Activity")
+            setResult(Activity.RESULT_OK, returnResult)
+            finish()
+
+        }
+
+
     }
 }
 
