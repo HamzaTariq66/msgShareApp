@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MsgShareApp</string>
+    <string name="Show">ShowToast</string>
+    <string name="EnterName">Enter Your Name</string>
+    <string name="SecondBtn">Submit</string>
+    <string name="MainView">Main Activity</string>
+    <string name="Password">Password</string>
+    <string name="Share">Share To Other App</string>
+    <string name="Backbtn">Back To Main Activity</string>
+</resources>
