@@ -12,8 +12,6 @@ import kotlinx.android.synthetic.main.activity_second.*
 
 class MainActivity : AppCompatActivity() {
 
-    val REQUEST_CODE = 1
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,22 +21,11 @@ class MainActivity : AppCompatActivity() {
             val message : String = UserText.text.toString()
             val intent = Intent(this,SecondActivity::class.java)
             intent.putExtra("user_message" , message)
-            startActivityForResult(intent , REQUEST_CODE)
-
-
+            startActivity(intent)
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_CODE){
-            if (resultCode == Activity.RESULT_OK){
-                var result = data!!.extras.get("return").toString()
-
-                Toast.makeText(this,result,Toast.LENGTH_SHORT).show()
-            }
-
-        }
-
     }
 }

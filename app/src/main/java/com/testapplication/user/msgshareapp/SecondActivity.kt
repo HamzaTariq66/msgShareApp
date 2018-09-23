@@ -5,8 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.testapplication.user.msgshareapp.R.id.ShareBtn
-import com.testapplication.user.msgshareapp.R.id.txtUserMsg
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity(){
@@ -32,16 +30,22 @@ class SecondActivity : AppCompatActivity(){
             startActivity(Intent.createChooser(intent,"Share this message to :"))
         }
 
-        Backbtn.setOnClickListener {
+        Backbtn2.setOnClickListener {
 
-            var returnResult = this.intent
-            returnResult.putExtra("return" , "Hello from Second Activity")
-            setResult(Activity.RESULT_OK, returnResult)
+            setResult(Activity.RESULT_OK)
             finish()
-
         }
 
+        ThirdBtn.setOnClickListener {
 
+            val intent = Intent(this,ThirdActivity::class.java)
+            startActivity(intent)
+
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
 
